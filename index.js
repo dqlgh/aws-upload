@@ -24,7 +24,7 @@ exports.lambdarhandler = async (event, context, callback) => {
             Body: resizedImage,
         })
         console.log('put', resizedImage, resizedImage.length);
-        return callback(null, '');
+        return callback(null, `thumb/${filename}`);
     } catch (error) {
         console.error(error);
         return callback(error);
