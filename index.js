@@ -3,7 +3,7 @@ const { S3Client, GetObjectCommand, PutObjectCommand } = require('@aws-sdk/clien
 
 const s3 = new S3Client();
 
-exports.lambdarhandler = async (event, context, callback) => {
+exports.handler = async (event, context, callback) => {
     const Bucket = event.Records[0].s3.bucket.name;
     const Key = decodeURIComponent(event.Records[0].s3.object.key);
     const filename = Key.split('/').at(-1);
